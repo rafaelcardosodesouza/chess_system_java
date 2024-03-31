@@ -10,5 +10,6 @@ public class Program {
         ChessMatch chessMatch = new ChessMatch();
         System.out.println();
         UI.printBoard(chessMatch.getPieces());
+        
     }
 }
