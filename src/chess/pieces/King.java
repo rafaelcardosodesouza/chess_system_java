@@ -20,6 +20,7 @@ public class King extends ChessPiece {
         return p == null || p.getColor() != getColor();
     }
 
+/*
     @Override
     public boolean[][] possibleMoves() {
         boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
@@ -67,4 +68,27 @@ public class King extends ChessPiece {
         }
         return mat;
     }
+
+ */
+
+    @Override
+    public boolean[][] possibleMoves() {
+        boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
+
+        int[][] directions = { {-1, 0}, {1, 0}, {0, -1}, {0, 1}, {-1, -1}, {-1, 1}, {1, -1}, {1, 1} };
+
+        for (int[] direction : directions) {
+            int newRow = position.getRow() + direction[0];
+            int newColumn = position.getColumn() + direction[1];
+
+            Position newPosition = new Position(newRow, newColumn);
+
+            if (getBoard().positionExists(newPosition) && canMove(newPosition)) {
+                mat[newRow][newColumn] = true;
+            }
+        }
+
+        return mat;
+    }
+
 }
