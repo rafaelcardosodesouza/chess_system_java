@@ -43,7 +43,6 @@ public class Program {
                     captured.add(capturePiece);
                 }
 
-
             } catch (ChessException | InputMismatchException e) {
                 System.out.println(e.getMessage());
                 sc.nextLine();
