@@ -32,7 +32,7 @@ public class Program {
 
                 boolean[][] possibleMoves = chessMatch.possibleMoves(source);
                 UI.clearScreen();
-                UI.printBoard( chessMatch.getPieces(), possibleMoves);
+                UI.printBoard(chessMatch.getPieces(), possibleMoves);
 
                 System.out.println();
                 System.out.println();
@@ -40,10 +40,15 @@ public class Program {
 
                 ChessPosition target = UI.readChessPosition(sc);
                 ChessPiece capturePiece = chessMatch.performChessMove(source, target);
-                if(capturePiece != null){
+                if (capturePiece != null) {
                     captured.add(capturePiece);
                 }
-
+                if (chessMatch.getPromoted() != null) {
+                    System.out.println("Enter piece for promotion (B | N | R | Q)");
+                    String type = sc.nextLine();
+                    chessMatch.replacePromotedPiece(type);
+                }
+                
             } catch (ChessException | InputMismatchException e) {
                 System.out.println(e.getMessage());
                 sc.nextLine();
