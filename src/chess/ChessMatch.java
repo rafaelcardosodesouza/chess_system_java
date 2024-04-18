@@ -1,14 +1,15 @@
 package chess;
 
 import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.List;
 
 import boardgame.Board;
 import boardgame.Piece;
 import boardgame.Position;
 import chess.pieces.*;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class ChessMatch {
     private int turn;
@@ -345,7 +346,7 @@ public class ChessMatch {
         placeNewPiece('e', 7, new Pawn(board, Color.BLACK, this));
         placeNewPiece('f', 7, new Pawn(board, Color.BLACK, this));
         placeNewPiece('g', 7, new Pawn(board, Color.BLACK, this));
-        placeNewPiece('h', 7, new Pawn(board, Color.BLACK, this));
+        placeNewPiece('h', 7, new Pawn(board, Color.WHITE, this));
     }
 
 }

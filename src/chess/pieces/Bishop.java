@@ -26,11 +26,9 @@ public class Bishop extends ChessPiece {
         while ((getBoard().positionExists(p) && !getBoard().thereIsApiece(p))) {
             mat[p.getRow()][p.getColumn()] = true;
             p.setValues(p.getRow() - 1, p.getColumn() - 1);
-
         }
         if (getBoard().positionExists(p) && isThereOpponentPice(p)) {
             mat[p.getRow()][p.getColumn()] = true;
-
         }
 
         //nordeste
@@ -58,13 +56,10 @@ public class Bishop extends ChessPiece {
         while ((getBoard().positionExists(p) && !getBoard().thereIsApiece(p))) {
             mat[p.getRow()][p.getColumn()] = true;
             p.setValues(p.getRow() + 1, p.getColumn() - 1);
-
         }
         if (getBoard().positionExists(p) && isThereOpponentPice(p)) {
             mat[p.getRow()][p.getColumn()] = true;
-
         }
-
         return mat;
     }
 }

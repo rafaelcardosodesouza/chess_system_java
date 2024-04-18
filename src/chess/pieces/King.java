@@ -14,7 +14,6 @@ public class King extends ChessPiece {
         super(board, color);
         this.chessMatch = chessMatch;
     }
-
     @Override
     public String toString() {
         return "K";
@@ -80,6 +79,7 @@ public class King extends ChessPiece {
 
  */
 
+    //metodo otimizado
     @Override
     public boolean[][] possibleMoves() {
         boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
@@ -119,5 +119,4 @@ public class King extends ChessPiece {
         }
         return mat;
     }
-
 }

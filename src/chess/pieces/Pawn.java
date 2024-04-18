@@ -13,7 +13,6 @@ public class Pawn extends ChessPiece {
         super(board, color);
         this.chessMatch = chessMatch;
     }
-
     @Override
     public boolean[][] possibleMoves() {
         boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
@@ -51,7 +50,6 @@ public class Pawn extends ChessPiece {
                 mat[right.getRow() - 1][right.getColumn()] = true;
             }
 
-
         } else {
             p.setValues(position.getRow() + 1, position.getColumn());
             if (getBoard().positionExists(p) && !getBoard().thereIsApiece(p)) {
@@ -83,7 +81,6 @@ public class Pawn extends ChessPiece {
         }
         return mat;
     }
-
     @Override
     public String toString() {
         return "P";

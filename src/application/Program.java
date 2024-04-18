@@ -1,8 +1,5 @@
 package application;
 
-import boardgame.Board;
-import boardgame.Piece;
-import boardgame.Position;
 import chess.ChessException;
 import chess.ChessMatch;
 import chess.ChessPiece;
@@ -15,7 +12,6 @@ import java.util.Scanner;
 
 public class Program {
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
 
         ChessMatch chessMatch = new ChessMatch();
@@ -52,7 +48,6 @@ public class Program {
                     }
                     chessMatch.replacePromotedPiece(type);
                 }
-
             } catch (ChessException | InputMismatchException e) {
                 System.out.println(e.getMessage());
                 sc.nextLine();
